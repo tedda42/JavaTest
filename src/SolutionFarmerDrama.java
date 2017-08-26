@@ -23,11 +23,11 @@ public class SolutionFarmerDrama {
         int knockedDown = 0;
         while (changed) {
             changed = false;
-            int upper = farmList.size() / 2;
-            for (int j = 0; j < upper; j++) {
+            for (int j = 0; j < farmList.size() / 2; ) {
                 int left = farmList.get(j);
                 int right = farmList.get(farmList.size() - j - 1);
                 if (left == right) {
+                    j++;
                     continue;
                 } else if (left < right) {
                     int left1 = farmList.get(j + 1);

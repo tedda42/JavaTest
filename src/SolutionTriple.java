@@ -1,8 +1,6 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.util.ArrayList;
-import java.util.List;
 
 public class SolutionTriple {
     public static void main(String[] args) throws Exception {
@@ -12,19 +10,21 @@ public class SolutionTriple {
 
         int n = Integer.parseInt(reader.readLine());
         int num;
-        List<Integer> list = new ArrayList<Integer>();
+        int[] list = new int[n];
+        int count = 0;
         for (int i = 1; i <= n; i++) {
             num = Integer.parseInt(reader.readLine());
             if (num % 3 == 0) {
-                list.add(i);
+                list[count++] = i;
             }
         }
-        if (list.isEmpty()) {
+        if (count == 0) {
             fileWriter.write("Nothing here!");
         } else {
-            fileWriter.write(list.size() + "\n");
-            for (Integer integer : list) {
-                fileWriter.write(integer + " ");
+            fileWriter.write(count + "\n");
+            for (int i = 0; i < count; i++) {
+                fileWriter.write(list[i] + " ");
+
             }
         }
 

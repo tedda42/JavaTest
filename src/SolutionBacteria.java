@@ -3,7 +3,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class Solution {
+public class SolutionBacteria {
     public static void main(String[] args) throws Exception {
         int numBacteria = getNumBacteria();
         int b = numBacteria;

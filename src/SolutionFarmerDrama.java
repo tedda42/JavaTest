@@ -11,39 +11,35 @@ public class SolutionFarmerDrama {
         String line = reader.readLine();
 //        String[] split = line.split(" ");
         int numPlots = Integer.parseInt(line);
-        List<Integer> farmList = new ArrayList<Integer>();
         String s = reader.readLine();
         fileReader.close();
         String[] split = s.split(" ");
+        int[] farmList = new int[split.length];
         for (int i = 0; i < numPlots; i++) {
-            farmList.add(Integer.parseInt(split[i]));
+            farmList[i] = Integer.parseInt(split[i]);
         }
 //        System.out.println("farmList = " + farmList);
-        boolean changed = true;
         int knockedDown = 0;
-        while (changed) {
-            changed = false;
-            for (int j = 0; j < farmList.size() / 2; ) {
-                int left = farmList.get(j);
-                int right = farmList.get(farmList.size() - j - 1);
-                if (left == right) {
-                    j++;
-                    continue;
-                } else if (left < right) {
-                    int left1 = farmList.get(j + 1);
-                    farmList.set(j + 1, left + left1);
-                    farmList.remove(j);
-                    changed = true;
-                    knockedDown++;
-                    break;
-                } else if (left > right) {
-                    int right1 = farmList.get(farmList.size() - j - 2);
-                    farmList.set(farmList.size() - j - 2, right + right1);
-                    farmList.remove(farmList.size() - j - 1);
-                    changed = true;
-                    knockedDown++;
-                    break;
-                }
+        int positionLeft = 0;
+        int positionRight = farmList.length - 1;
+        int prevSizeLeft = 0;
+        int prevSizeRight = 0;
+        while (positionLeft < positionRight) {
+            int currSizeLeft = prevSizeLeft + farmList[positionLeft];
+            int currSizeRight = prevSizeRight + farmList[positionRight];
+            if (currSizeLeft == currSizeRight) {
+                positionLeft++;
+                positionRight--;
+                prevSizeLeft = 0;
+                prevSizeRight = 0;
+            } else if (currSizeLeft < currSizeRight) {
+                knockedDown++;
+                positionLeft++;
+                prevSizeLeft = currSizeLeft;
+            } else {
+                knockedDown++;
+                positionRight--;
+                prevSizeRight = currSizeRight;
             }
         }
         //System.out.println("farmList = " + farmList);

@@ -1,10 +1,9 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.util.ArrayList;
-import java.util.List;
 
-public class SolutionFarmerDrama {
+
+class SolutionFarmerDrama {
     public static void main(String[] args) throws Exception {
         FileReader fileReader = new FileReader("farmin.txt");
         BufferedReader reader = new BufferedReader(fileReader);

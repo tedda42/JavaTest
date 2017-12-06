@@ -2,7 +2,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 
-public class SolutionMagicSquare {
+class SolutionMagicSquares {
     public static void main(String[] args) throws Exception {
         FileReader fileReader = new FileReader("magicin.txt");
         BufferedReader reader = new BufferedReader(fileReader);
@@ -24,7 +24,7 @@ public class SolutionMagicSquare {
             if (grid[2][0] <= 0) {
                 continue;
             }
-            for (int j = 1; i <= 20 && !found; j++) {
+            for (int j = 1; j <= 20 && !found; j++) {
                 grid[1][1] = j;
                 grid[1][2] = magic - j - grid[1][0];
                 if (grid[1][2] <= 0) {

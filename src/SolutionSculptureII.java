@@ -23,10 +23,13 @@ public class SolutionSculptureII {
             W[i] = Integer.parseInt(split[1]) + t[i];
         }
         int maxHeight = 0;
-        for (int i = 0; i < t.length; i++) {
+        int liveIndex = 0;
+        for (int i = 0; i < numBlocks; i++) {
             boolean found = false;
-            for (int j = i - 1; j >= 0; j--) {//Search for block to land on
+            for (int j = i - 1; j >= liveIndex; j--) {//Search for block to land on
+
                 if (W[j] > t[i]) {
+//                if (w[j] + t[j] > t[i]) {
                     H[i] = h[i] + H[j];
                     if (H[i] > maxHeight) {
                         maxHeight = H[i];
@@ -37,6 +40,7 @@ public class SolutionSculptureII {
             }
             if (!found) {
                 H[i] = h[i];//default to current height of block
+                liveIndex = i;
                 if (H[i] > maxHeight) {
                     maxHeight = H[i];
                 }

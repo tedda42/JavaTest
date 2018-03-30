@@ -3,7 +3,6 @@
 /.idea/
 /out/
 bendout.txt
-farmin.txt
 output.txt
 outputReverse.txt
 primes.out
@@ -11,3 +10,4 @@ tripout.txt
 farmout.txt
 artout.txt
 probeout.txt
+cocoout.txt

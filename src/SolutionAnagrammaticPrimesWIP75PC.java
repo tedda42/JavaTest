@@ -4,7 +4,7 @@ import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SolutionAnagrammaticPrimes {
+public class SolutionAnagrammaticPrimesWIP75PC {
     public static void main(String[] args) throws Exception {
         FileReader fileReader = new FileReader("primes.in");
         BufferedReader reader = new BufferedReader(fileReader);

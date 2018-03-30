@@ -4,7 +4,7 @@ import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SolutionProbe {
+public class SolutionProbeWIP25PC {
     static final int E = 0;
     static final int W = 1;
     static final int L = 2;
